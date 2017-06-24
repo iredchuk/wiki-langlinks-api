@@ -7,7 +7,8 @@ app.get('/health', (req, res) => {
 
 app.get('/langlinks', handleLanglinksRequest);
 
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 app.listen(port, err => {
 	if (err) {
 		console.error(err);
