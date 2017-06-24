@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Prototype for API to show translation into several languages at once using MediaWiki API",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "xo"
+  },
   "engines": {
     "node": ">=8.0.0"
   },
@@ -25,5 +27,15 @@
   "homepage": "https://github.com/iredchuk/wiki-langlinks-api#readme",
   "dependencies": {
     "express": "~4.15.3"
+  },
+  "devDependencies": {
+    "xo": "~0.18.2"
+  },
+  "xo": {
+    "envs": ["node"],
+    "rules": {
+      "arrow-parens": ["error", "always"],
+      "object-curly-spacing": ["error", "always"]
+    }
   }
 }
