@@ -1,16 +1,18 @@
+const validateLanglinksRequest = require('./validate-langlinks-request');
 const getLanglinks = require('./get-langlinks');
 
 async function handleLanglinksRequest(req, res) {
-	try {
-		const result = await getLanglinks({
-			searchTerm: req.query.search,
-			sourceLang: req.query.source,
-			targetLangs: req.query.target.split('|')
-		});
+	const request = validateLanglinksRequest(req);
+	if (request.errors.length > 0) {
+		return res.status(400).send({errors: request.errors});
+	}
 
-		res.send(result);
+	try {
+		const {searchTerm, sourceLang, targetLangs} = request;
+		const result = await getLanglinks({searchTerm, sourceLang, targetLangs});
+		return res.send(result);
 	}	catch (err) {
-		res.status(500).send({message: err});
+		return res.status(500).send({message: err});
 	}
 }
 
