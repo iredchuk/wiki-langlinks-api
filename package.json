@@ -4,6 +4,8 @@
   "description": "Prototype for API to show translation into several languages at once using MediaWiki API",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon -x npm start",
     "lint": "xo"
   },
   "engines": {
@@ -26,16 +28,11 @@
   },
   "homepage": "https://github.com/iredchuk/wiki-langlinks-api#readme",
   "dependencies": {
-    "express": "~4.15.3"
+    "express": "~4.15.3",
+    "superagent": "~3.5.2"
   },
   "devDependencies": {
+    "nodemon": "~1.11.0",
     "xo": "~0.18.2"
-  },
-  "xo": {
-    "envs": ["node"],
-    "rules": {
-      "arrow-parens": ["error", "always"],
-      "object-curly-spacing": ["error", "always"]
-    }
   }
 }
