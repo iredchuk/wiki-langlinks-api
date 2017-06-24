@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "watch": "nodemon -x npm start",
+    "pretest": "npm run lint",
+    "test": "ava",
     "lint": "xo"
   },
   "engines": {
@@ -32,6 +34,7 @@
     "superagent": "~3.5.2"
   },
   "devDependencies": {
+    "ava": "~0.19.1",
     "nodemon": "~1.11.0",
     "xo": "~0.18.2"
   }

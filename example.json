@@ -1,0 +1,19 @@
+{
+	"batchcomplete": "",
+	"query": {
+		"pages": {
+			"43236": {
+				"pageid": 43236,
+				"ns": 0,
+				"title": "Unicorn",
+				"langlinks": [
+					{
+						"lang": "de",
+						"url": "https://de.wikipedia.org/wiki/Einhorn",
+						"*": "Einhorn"
+					}
+				]
+			}
+		}
+	}
+}
