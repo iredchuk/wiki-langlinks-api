@@ -9,6 +9,7 @@
 				"langlinks": [
 					{
 						"lang": "de",
+						"autonym": "Deutsch",
 						"url": "https://de.wikipedia.org/wiki/Einhorn",
 						"*": "Einhorn"
 					}

@@ -7,6 +7,7 @@ function mapLanglinkResponse(resp) {
 
 	const links = langlinks.map(link => ({
 		lang: link.lang,
+		autonym: link.autonym,
 		title: link['*'],
 		url: link.url
 	}));

@@ -12,11 +12,13 @@ test('request with two target languages', async t => {
 		langLinks: [
 			{
 				lang: 'de',
+				autonym: 'Deutsch',
 				title: 'Einhorn',
 				url: 'https://de.wikipedia.org/wiki/Einhorn'
 			},
 			{
 				lang: 'es',
+				autonym: 'español',
 				title: 'Unicornio',
 				url: 'https://es.wikipedia.org/wiki/Unicornio'
 			}

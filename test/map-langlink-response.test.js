@@ -7,6 +7,7 @@ test('map response for known search term', t => {
 	const actual = sut(exampleGoodResponse);
 	t.deepEqual(actual, {
 		lang: 'de',
+		autonym: 'Deutsch',
 		title: 'Einhorn',
 		url: 'https://de.wikipedia.org/wiki/Einhorn'
 	});
