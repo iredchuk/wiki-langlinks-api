@@ -40,5 +40,11 @@
     "ava": "~0.19.1",
     "nodemon": "~1.11.0",
     "xo": "~0.18.2"
+  },
+  "xo": {
+    "envs": ["node"],
+    "rules": {
+      "object-curly-spacing": ["error", "always"]
+    }
   }
 }

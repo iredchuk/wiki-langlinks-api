@@ -1,6 +1,6 @@
 const request = require('superagent');
 
-async function getLangLink({searchTerm, sourceLang, targetLang}) {
+async function getLangLink({ searchTerm, sourceLang, targetLang }) {
 	const response = await request
 		.get(`https://${sourceLang}.wikipedia.org/w/api.php`)
 		.query({
