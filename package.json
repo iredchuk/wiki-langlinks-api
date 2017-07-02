@@ -8,6 +8,7 @@
     "watch": "nodemon -x npm start",
     "pretest": "npm run lint",
     "test": "ava",
+    "testw": "ava --watch",
     "lint": "xo",
     "dock": "docker build -t wiki-langlinks-api .",
     "start-docker": "docker run --rm -p 3000:3000 --name wiki-langlinks-api wiki-langlinks-api"
