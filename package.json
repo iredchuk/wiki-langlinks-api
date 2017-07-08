@@ -7,8 +7,10 @@
     "start": "node index.js",
     "watch": "nodemon -x npm start",
     "pretest": "npm run lint",
-    "test": "ava",
-    "testw": "ava --watch",
+    "test": "ava test/**/*.test.js",
+    "testw": "ava test/**/*.test.js --watch",
+    "e2e": "ava e2e-test/**/*.test.js",
+    "ci": "npm run test && npm run e2e",
     "lint": "xo",
     "dock": "docker build -t wiki-langlinks-api .",
     "start-docker": "docker run --rm -p 3000:3000 --name wiki-langlinks-api wiki-langlinks-api"
