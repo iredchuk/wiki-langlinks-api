@@ -1,7 +1,6 @@
-const test = require('ava');
 const sut = require('../app/validate-langlinks-request');
 
-test('validate valid request', t => {
+test('validate valid request', () => {
 	const req = {
 		query: {
 			search: 'Unicorn',
@@ -12,7 +11,7 @@ test('validate valid request', t => {
 
 	const actual = sut(req);
 
-	t.deepEqual(actual, {
+	expect(actual).toEqual(actual, {
 		searchTerm: 'Unicorn',
 		sourceLang: 'en',
 		targetLangs: ['de', 'es'],
@@ -20,7 +19,7 @@ test('validate valid request', t => {
 	});
 });
 
-test('validate invalid request when search is missing', t => {
+test('validate invalid request when search is missing', () => {
 	const req = {
 		query: {
 			search: '',
@@ -31,7 +30,7 @@ test('validate invalid request when search is missing', t => {
 
 	const actual = sut(req);
 
-	t.deepEqual(actual, {
+	expect(actual).toEqual({
 		sourceLang: 'en',
 		targetLangs: ['de', 'es'],
 		errors: [
@@ -40,7 +39,7 @@ test('validate invalid request when search is missing', t => {
 	});
 });
 
-test('validate invalid request when source is missing', t => {
+test('validate invalid request when source is missing', () => {
 	const req = {
 		query: {
 			search: 'Unicorn',
@@ -51,7 +50,7 @@ test('validate invalid request when source is missing', t => {
 
 	const actual = sut(req);
 
-	t.deepEqual(actual, {
+	expect(actual).toEqual({
 		searchTerm: 'Unicorn',
 		targetLangs: ['de', 'es'],
 		errors: [
@@ -60,7 +59,7 @@ test('validate invalid request when source is missing', t => {
 	});
 });
 
-test('validate invalid request when target is missing', t => {
+test('validate invalid request when target is missing', () => {
 	const req = {
 		query: {
 			search: 'Unicorn',
@@ -71,7 +70,7 @@ test('validate invalid request when target is missing', t => {
 
 	const actual = sut(req);
 
-	t.deepEqual(actual, {
+	expect(actual).toEqual({
 		searchTerm: 'Unicorn',
 		sourceLang: 'en',
 		errors: [

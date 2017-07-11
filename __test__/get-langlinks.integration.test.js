@@ -1,14 +1,13 @@
-const test = require('ava');
 const sut = require('../app/get-langlinks');
 
-test('request with two target languages', async t => {
+test('request with two target languages', async () => {
 	const actual = await sut({
 		searchTerm: 'Unicorn',
 		sourceLang: 'en',
 		targetLangs: ['de', 'es']
 	});
 
-	t.deepEqual(actual, {
+	expect(actual).toEqual({
 		langLinks: [
 			{
 				lang: 'de',

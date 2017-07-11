@@ -1,11 +1,10 @@
-const test = require('ava');
 const sut = require('../app/map-langlink-response');
 const exampleGoodResponse = require('./example-good-response.json');
 const exampleNotFoundResponse = require('./example-not-found-response.json');
 
-test('map response for known search term', t => {
+test('map response for known search term', () => {
 	const actual = sut(exampleGoodResponse);
-	t.deepEqual(actual, {
+	expect(actual).toEqual({
 		lang: 'de',
 		autonym: 'Deutsch',
 		title: 'Einhorn',
@@ -13,7 +12,7 @@ test('map response for known search term', t => {
 	});
 });
 
-test('map response for unknown search term', t => {
+test('map response for unknown search term', () => {
 	const actual = sut(exampleNotFoundResponse);
-	t.is(actual, undefined);
+	expect(actual).toBe(undefined);
 });
