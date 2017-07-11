@@ -1,21 +1,19 @@
-const app = require('express')();
-const cors = require('cors');
+const Koa = require('koa');
+const router = require('koa-route');
+const cors = require('kcors');
 const handleLanglinksRequest = require('./app/handle-langlinks-request');
+
+const app = new Koa();
+
+app.use(router.get('/health', async ctx => {
+	ctx.body = 'OK';
+}));
+
+app.use(router.get('/langlinks', handleLanglinksRequest));
 
 app.use(cors());
 
-app.get('/health', (req, res) => {
-	res.send('OK');
-});
-
-app.get('/langlinks', handleLanglinksRequest);
-
 const port = process.env.PORT || 3000;
 
-app.listen(port, err => {
-	if (err) {
-		console.error(err);
-	} else {
-		console.log(`Listening on port ${port}...`);
-	}
-});
+app.listen(port);
+console.log(`Listening on port ${port}...`);
