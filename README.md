@@ -3,7 +3,7 @@
 Prototype of an API to show translation into several languages at once using [MediaWiki API](https://www.mediawiki.org/wiki/API:Main_page).
 
 [![build status](https://img.shields.io/travis/iredchuk/wiki-langlinks-api/master.svg?style=flat-square)](https://travis-ci.org/iredchuk/wiki-langlinks-api)
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Endpoints
 
@@ -17,18 +17,18 @@ Prototype of an API to show translation into several languages at once using [Me
 > 200
 ~~~json
 {
-	"langLinks": [
-		{
-			"lang":"es",
-			"title":"Quercus",
-			"url":"https://es.wikipedia.org/wiki/Quercus"
-		},
-		{
-			"lang":"de",
-			"title":"Eichen",
-			"url":"https://de.wikipedia.org/wiki/Eichen"
-		}
-	]
+  "langLinks": [
+    {
+      "lang":"es",
+      "title":"Quercus",
+      "url":"https://es.wikipedia.org/wiki/Quercus"
+    },
+    {
+      "lang":"de",
+      "title":"Eichen",
+      "url":"https://de.wikipedia.org/wiki/Eichen"
+    }
+  ]
 }
 ~~~
 

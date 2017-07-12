@@ -10,7 +10,7 @@
     "test": "jest --coverage",
     "test-watch": "jest --watch",
     "ci": "npm run test",
-    "lint": "xo",
+    "lint": "standard",
     "dock": "docker build -t wiki-langlinks-api .",
     "start-docker": "docker run --rm -p 3000:3000 --name wiki-langlinks-api wiki-langlinks-api"
   },
@@ -42,7 +42,7 @@
   "devDependencies": {
     "jest": "~20.0.4",
     "nodemon": "~1.11.0",
-    "xo": "~0.18.2"
+    "standard": "~10.0.2"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -50,16 +50,7 @@
     ],
     "testEnvironment": "node"
   },
-  "xo": {
-    "envs": [
-      "node",
-      "jest"
-    ],
-    "rules": {
-      "object-curly-spacing": [
-        "error",
-        "always"
-      ]
-    }
+  "standard": {
+    "env": "jest"
   }
 }

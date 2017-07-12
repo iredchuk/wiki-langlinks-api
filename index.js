@@ -1,19 +1,19 @@
-const Koa = require('koa');
-const router = require('koa-route');
-const cors = require('kcors');
-const handleLanglinksRequest = require('./app/handle-langlinks-request');
+const Koa = require('koa')
+const router = require('koa-route')
+const cors = require('kcors')
+const handleLanglinksRequest = require('./app/handle-langlinks-request')
 
-const app = new Koa();
+const app = new Koa()
 
 app.use(router.get('/health', async ctx => {
-	ctx.body = 'OK';
-}));
+  ctx.body = 'OK'
+}))
 
-app.use(router.get('/langlinks', handleLanglinksRequest));
+app.use(router.get('/langlinks', handleLanglinksRequest))
 
-app.use(cors());
+app.use(cors())
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000
 
-app.listen(port);
-console.log(`Listening on port ${port}...`);
+app.listen(port)
+console.log(`Listening on port ${port}...`)
