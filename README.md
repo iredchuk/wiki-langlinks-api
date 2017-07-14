@@ -10,9 +10,9 @@ Prototype of an API to show translation into several languages at once using [Me
 ### GET /langlinks?search=&source=&target=
 
 > Params
-- *search*: search term
-- *source*: source language (eg., "en")
-- *target*: "|"-separated target languages (eg. "es|de")
+- *search*: search term (e.g. "Oak")
+- *source*: source language (e.g. "en")
+- *target*: "|"-separated target languages (e.g. "es|de")
 
 > 200
 ~~~json
