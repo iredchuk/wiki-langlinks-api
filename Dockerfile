@@ -1,4 +1,4 @@
-FROM node:8.1.2-alpine
+FROM node:8.1.4-alpine
 MAINTAINER iredchuk (https://github.com/iredchuk/wiki-langlinks-api.git)
 WORKDIR /usr/node_app
 ENV NODE_ENV=production
