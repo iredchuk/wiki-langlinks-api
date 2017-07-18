@@ -6,6 +6,8 @@ const mediaWikiClient = require('./app/api-clients/mediawiki-client')
 
 const app = new Koa()
 
+app.use(cors())
+
 app.use(router.get('/health', async ctx => {
   ctx.body = 'OK'
 }))
@@ -13,8 +15,6 @@ app.use(router.get('/health', async ctx => {
 app.use(router.get('/langlinks', async ctx => {
   return handleLanglinksRequest(ctx, query => mediaWikiClient.getLangLink(query))
 }))
-
-app.use(cors())
 
 const port = process.env.PORT || 3000
 
