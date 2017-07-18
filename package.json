@@ -10,9 +10,7 @@
     "test": "jest --coverage",
     "test-watch": "jest --watch",
     "ci": "npm run test",
-    "lint": "standard",
-    "dock": "docker build -t wiki-langlinks-api .",
-    "start-docker": "docker run --rm -p 3000:3000 --name wiki-langlinks-api wiki-langlinks-api"
+    "lint": "standard"
   },
   "engines": {
     "node": ">=8.0.0"
