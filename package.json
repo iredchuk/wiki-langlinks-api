@@ -35,12 +35,12 @@
     "kcors": "~2.2.1",
     "koa": "~2.3.0",
     "koa-route": "~3.2.0",
-    "superagent": "~3.5.2"
+    "superagent": "~3.6.0"
   },
   "devDependencies": {
-    "jest": "~20.0.4",
-    "nodemon": "~1.11.0",
-    "standard": "~10.0.2"
+    "jest": "~21.0.1",
+    "nodemon": "~1.11.1",
+    "standard": "~10.0.3"
   },
   "jest": {
     "collectCoverageFrom": [
