@@ -1,6 +1,6 @@
 {
   "name": "wiki-langlinks-api",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Prototype of an API to show translation into several languages at once using MediaWiki API",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "lint": "standard"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": "^8.0.0"
   },
   "repository": {
     "type": "git",
