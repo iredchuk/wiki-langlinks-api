@@ -9,6 +9,7 @@ async function getLangLink ({ searchTerm, sourceLang, targetLang }) {
       prop: 'langlinks',
       llprop: 'url|autonym',
       lllang: targetLang,
+      redirects: '',
       format: 'json'
     })
     .accept('json')
