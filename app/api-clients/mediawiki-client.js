@@ -1,3 +1,4 @@
+const mem = require('mem')
 const request = require('superagent')
 
 async function getLangLink ({ searchTerm, sourceLang, targetLang }) {
@@ -31,7 +32,10 @@ async function getAllLangs () {
   return response.body
 }
 
+const fiveDaysInMs = 5 * 24 * 60 * 60 * 1000
+const getAllLangsCached = mem(getAllLangs, { maxAge: fiveDaysInMs })
+
 module.exports = {
   getLangLink,
-  getAllLangs
+  getAllLangs: getAllLangsCached
 }
