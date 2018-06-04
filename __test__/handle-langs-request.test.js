@@ -10,12 +10,20 @@ test('shourd return supported languages in specific format', async () => {
     query: {
       languages: [
         {
-          code: 'en',
-          '*': 'English'
+          code: 'ase',
+          '*': 'American sign language'
         },
         {
           code: 'de',
           '*': 'Deutsch'
+        },
+        {
+          code: 'en',
+          '*': 'English'
+        },
+        {
+          code: 'uk',
+          '*': 'українська'
         }
       ]
     }
@@ -27,12 +35,16 @@ test('shourd return supported languages in specific format', async () => {
 
   expect(ctx.body).toEqual([
     {
-      code: 'en',
-      '*': 'English'
+      lang: 'de',
+      autonym: 'Deutsch'
     },
     {
-      code: 'de',
-      '*': 'Deutsch'
+      lang: 'en',
+      autonym: 'English'
+    },
+    {
+      lang: 'uk',
+      autonym: 'українська'
     }
   ])
 })
