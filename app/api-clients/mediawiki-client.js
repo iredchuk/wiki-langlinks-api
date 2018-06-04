@@ -17,6 +17,21 @@ async function getLangLink ({ searchTerm, sourceLang, targetLang }) {
   return response.body
 }
 
+async function getAllLangs () {
+  const response = await request
+    .get(`https://en.wikipedia.org/w/api.php`)
+    .query({
+      action: 'query',
+      meta: 'siteinfo',
+      siprop: 'languages',
+      format: 'json'
+    })
+    .accept('json')
+
+  return response.body
+}
+
 module.exports = {
-  getLangLink
+  getLangLink,
+  getAllLangs
 }
