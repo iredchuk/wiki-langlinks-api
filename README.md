@@ -32,6 +32,21 @@ Prototype of an API to show translation into several languages at once using [Me
 }
 ~~~
 
+### GET /langs
+> 200
+~~~json
+[
+  {
+    "lang":"de",
+    "autonym":"Deutsch"
+  },
+  {
+    "lang":"en",
+    "autonym":"English"
+  }
+]
+~~~
+
 ### GET /health
 
 > 200
