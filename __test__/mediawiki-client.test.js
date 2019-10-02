@@ -28,5 +28,5 @@ test('get all languages', async () => {
   expect(body.query).toBeTruthy()
   expect(body.query.languages).toBeInstanceOf(Array)
   const singleLang = body.query.languages.find(o => o.code === 'de')
-  expect(singleLang).toEqual({ code: 'de', '*': 'Deutsch' })
+  expect(singleLang).toEqual({ code: 'de', '*': 'Deutsch', bcp47: 'de' })
 })

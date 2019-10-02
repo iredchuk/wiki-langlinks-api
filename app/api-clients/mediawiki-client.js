@@ -20,7 +20,7 @@ async function getLangLink ({ searchTerm, sourceLang, targetLang }) {
 
 async function getAllLangs () {
   const response = await request
-    .get(`https://en.wikipedia.org/w/api.php`)
+    .get('https://en.wikipedia.org/w/api.php')
     .query({
       action: 'query',
       meta: 'siteinfo',
