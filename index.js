@@ -9,6 +9,20 @@ const app = new Koa();
 
 app.use(cors());
 
+app.use(async (ctx, next) => {
+  try {
+    await next();
+  } catch (err) {
+    ctx.status = err.status || 500;
+    ctx.body = err.message;
+    ctx.app.emit("error", err, ctx);
+  }
+});
+
+app.on("error", err => {
+  console.error(err);
+});
+
 app.use(
   router.get("/health", async ctx => {
     ctx.body = "OK";

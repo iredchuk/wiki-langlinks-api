@@ -50,20 +50,3 @@ test("shourd return supported languages in specific format", async () => {
     }
   ]);
 });
-
-test("when fetchLanglink rejects an Error", async () => {
-  const ctx = {
-    request: {}
-  };
-
-  const fetchLanglink = jest.fn();
-  fetchLanglink.mockReturnValue(Promise.reject(new Error("WTF")));
-
-  await sut(ctx, fetchLanglink);
-
-  expect(ctx.status).toBe(500);
-
-  expect(ctx.body).toEqual({
-    message: "Error: WTF"
-  });
-});

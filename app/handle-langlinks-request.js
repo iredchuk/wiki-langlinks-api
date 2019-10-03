@@ -6,18 +6,13 @@ const fetchLangLinks = async (
   fetchLanglink,
   { searchTerm, sourceLang, targetLangs }
 ) => {
-  try {
-    const result = await getLanglinks(
-      { searchTerm, sourceLang, targetLangs },
-      fetchLanglink
-    );
+  const result = await getLanglinks(
+    { searchTerm, sourceLang, targetLangs },
+    fetchLanglink
+  );
 
-    ctx.status = 200;
-    ctx.body = result;
-  } catch (err) {
-    ctx.status = 500;
-    ctx.body = { message: err.toString() };
-  }
+  ctx.status = 200;
+  ctx.body = result;
 };
 
 async function handleLanglinksRequest(ctx, fetchLanglink) {

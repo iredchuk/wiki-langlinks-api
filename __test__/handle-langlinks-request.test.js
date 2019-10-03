@@ -60,29 +60,6 @@ test("when target in request query is missing", async () => {
   });
 });
 
-test("when query is valid and fetch rejects an Error", async () => {
-  const ctx = {
-    request: {
-      query: {
-        search: "...",
-        source: "zz",
-        target: "xx|yy"
-      }
-    }
-  };
-
-  const fetchLanglink = jest.fn();
-  fetchLanglink.mockReturnValue(Promise.reject(new Error("WTF")));
-
-  await sut(ctx, fetchLanglink);
-
-  expect(ctx.status).toBe(500);
-
-  expect(ctx.body).toEqual({
-    message: "Error: WTF"
-  });
-});
-
 test("when query is valid and fetch resolves langlinks", async () => {
   const ctx = {
     request: {
