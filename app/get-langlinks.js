@@ -1,16 +1,24 @@
-const mapLanglinkResponse = require('./map-langlink-response')
+const mapLanglinkResponse = require("./map-langlink-response");
 
-async function getLanglinks ({ searchTerm, sourceLang, targetLangs }, fetchLanglink) {
+async function getLanglinks(
+  { searchTerm, sourceLang, targetLangs },
+  fetchLanglink
+) {
   const langLinks = await Promise.all(
-    targetLangs.map(targetLang => getOneLangLink({ searchTerm, sourceLang, targetLang }, fetchLanglink))
-  )
+    targetLangs.map(targetLang =>
+      getOneLangLink({ searchTerm, sourceLang, targetLang }, fetchLanglink)
+    )
+  );
 
-  return { langLinks: langLinks.filter(l => l) }
+  return { langLinks: langLinks.filter(l => l) };
 }
 
-async function getOneLangLink ({ searchTerm, sourceLang, targetLang }, fetchLanglink) {
-  const response = await fetchLanglink({ searchTerm, sourceLang, targetLang })
-  return mapLanglinkResponse(response)
+async function getOneLangLink(
+  { searchTerm, sourceLang, targetLang },
+  fetchLanglink
+) {
+  const response = await fetchLanglink({ searchTerm, sourceLang, targetLang });
+  return mapLanglinkResponse(response);
 }
 
-module.exports = getLanglinks
+module.exports = getLanglinks;
