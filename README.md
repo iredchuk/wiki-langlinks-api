@@ -1,9 +1,8 @@
 # wiki-langlinks-api
 
-Prototype of an API to show translation into several languages at once using [MediaWiki API](https://www.mediawiki.org/wiki/API:Main_page).
+> Not maintained any more
 
-[![build status](https://img.shields.io/travis/iredchuk/wiki-langlinks-api/master.svg?style=flat-square)](https://travis-ci.org/iredchuk/wiki-langlinks-api)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+Prototype of an API to show translation into several languages at once using [MediaWiki API](https://www.mediawiki.org/wiki/API:Main_page).
 
 ## Endpoints
 
